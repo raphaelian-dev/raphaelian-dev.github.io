@@ -51,7 +51,7 @@
                 fileList.innerHTML = ""; // Effacer le texte "Chargement..."
 
                 data.forEach(item => {
-                    if item.path!=path."/index.html"
+                    if item.path!=path+"/index.html"
                     let li = document.createElement("li");
                     let a = document.createElement("a");
                     a.href = "/"+item.path;
