@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Personnel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+        }
+        #motivation {
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Bienvenue sur mon site personnel</header>
+
+    <section>
+        <h2>👋 Salut, je suis [Ton Nom]</h2>
+        <p>Étudiant passionné par [ton domaine].</p>
+        <p>Voici mes ressources :</p>
+        <a href="notes.html" class="btn">📚 Notes de cours</a>
+        <a href="https://github.com/ton-github" target="_blank" class="btn">💻 Mon GitHub</a>
+        <a href="cv.pdf" target="_blank" class="btn">📄 Mon CV</a>
+    </section>
+
+    <section>
+        <h2>🎯 Mes motivations</h2>
+        <p>Pourquoi cette école ?</p>
+        <button class="btn" onclick="toggleMotivation()">Voir plus</button>
+        <p id="motivation">
+            Passionné par [ton domaine], j'aspire à rejoindre [Nom de l'école] pour approfondir mes connaissances et contribuer à des projets innovants.
+        </p>
+    </section>
+
+    <footer>
+        Contact : <a href="mailto:ton-email@example.com">ton-email@example.com</a>
+    </footer>
+
+    <script>
+        function toggleMotivation() {
+            var element = document.getElementById("motivation");
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
