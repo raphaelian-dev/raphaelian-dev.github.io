@@ -3,90 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Personnel</title>
+    <title>[Ton Nom] - Accueil</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
-            text-align: center;
+            line-height: 1.6;
         }
         header {
-            background-color: #0073e6;
+            background-color: #0056b3;
             color: white;
             padding: 20px;
-            font-size: 24px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
         }
         section {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 30px auto;
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+        h2 {
+            color: #0056b3;
+        }
         a {
-            color: #0073e6;
+            color: #0056b3;
             text-decoration: none;
             font-weight: bold;
         }
         .btn {
             display: inline-block;
-            background-color: #0073e6;
+            background-color: #0056b3;
             color: white;
             padding: 10px 15px;
             margin: 10px;
             border-radius: 5px;
             text-decoration: none;
-            transition: 0.3s;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
         }
         .btn:hover {
-            background-color: #005bb5;
+            background-color: #003f80;
         }
         footer {
             margin-top: 20px;
-            padding: 10px;
+            padding: 15px;
             background: #333;
             color: white;
+            text-align: center;
+            font-size: 14px;
         }
-        #motivation {
+        #parcours {
             display: none;
             margin-top: 15px;
+            text-align: justify;
         }
     </style>
 </head>
 <body>
 
-    <header>Bienvenue sur mon site personnel</header>
+    <header>[Ton Nom]</header>
 
     <section>
-        <h2>👋 Salut, je suis [Ton Nom]</h2>
-        <p>Étudiant passionné par [ton domaine].</p>
-        <p>Voici mes ressources :</p>
+        <h2>À propos de moi</h2>
+        <p>Étudiant passionné par [ton domaine], je développe mes compétences à travers divers projets et formations.</p>
+        <p>Vous trouverez ici mes ressources académiques ainsi que mon travail.</p>
         <a href="notes.html" class="btn">📚 Notes de cours</a>
         <a href="https://github.com/ton-github" target="_blank" class="btn">💻 Mon GitHub</a>
         <a href="cv.pdf" target="_blank" class="btn">📄 Mon CV</a>
     </section>
 
     <section>
-        <h2>🎯 Mes motivations</h2>
-        <p>Pourquoi cette école ?</p>
-        <button class="btn" onclick="toggleMotivation()">Voir plus</button>
-        <p id="motivation">
-            Passionné par [ton domaine], j'aspire à rejoindre [Nom de l'école] pour approfondir mes connaissances et contribuer à des projets innovants.
+        <h2>Mon parcours et mes objectifs</h2>
+        <p>Découvrez mon parcours et ce qui m’anime dans mon domaine d’études.</p>
+        <button class="btn" onclick="toggleParcours()">En savoir plus</button>
+        <p id="parcours">
+            Depuis plusieurs années, je m’intéresse particulièrement à [ton domaine]. Mon objectif est de rejoindre [Nom de l'école ou du programme] afin de me perfectionner et d’apporter ma contribution à des projets ambitieux. Grâce à mes expériences et mes réalisations personnelles, j’ai acquis des compétences en [compétence clé], que j’aspire à approfondir et mettre en pratique dans un cadre académique et professionnel.
         </p>
     </section>
 
+    <section>
+        <h2>Me contacter</h2>
+        <p>N’hésitez pas à me contacter pour toute question ou opportunité.</p>
+        <a href="mailto:ton-email@example.com" class="btn">📩 Envoyer un email</a>
+    </section>
+
     <footer>
-        Contact : <a href="mailto:ton-email@example.com">ton-email@example.com</a>
+        © 2024 [Ton Nom] - Tous droits réservés
     </footer>
 
     <script>
-        function toggleMotivation() {
-            var element = document.getElementById("motivation");
-            if (element.style.display === "none") {
+        function toggleParcours() {
+            var element = document.getElementById("parcours");
+            if (element.style.display === "none" || element.style.display === "") {
                 element.style.display = "block";
             } else {
                 element.style.display = "none";
