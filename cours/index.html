@@ -38,7 +38,7 @@
     <ul id="file-list"><li>
         <a href="../">⬅ Retour (../)</a>
     </li> <!-- Parent directory link -->
-    Chargement...</ul>
+    <span id="loading">Chargement...</span></ul>
 
     <script>
         async function fetchFiles() {
@@ -51,7 +51,8 @@
                 let response = await fetch(url);
                 let data = await response.json();
                 let fileList = document.getElementById("file-list");
-                fileList.innerHTML = ""; // Effacer le texte "Chargement..."
+                let loading = document.getElementById("loading");
+                loading.innerHTML=""; // Effacer le texte "Chargement..."
 
                 data.forEach(item => {
                     if (item.path!=path+"/index.html"){
