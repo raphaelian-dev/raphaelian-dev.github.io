@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des fichiers - Cours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            background: white;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📂 Contenu du dossier "Philosophie"</h2>
+    <ul id="file-list">Chargement...</ul>
+
+    <script>
+        async function fetchFiles() {
+            const username = "raphaelian-dev"; 
+            const repo = "raphaelian-dev.github.io"; 
+            const path = "cours/philosophie"; 
+            const url = `https://api.github.com/repos/${username}/${repo}/contents/${path}`;
+
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                let fileList = document.getElementById("file-list");
+                fileList.innerHTML = ""; // Effacer le texte "Chargement..."
+
+                data.forEach(item => {
+                    if (item.path!=path+"/index.html"){
+                    let li = document.createElement("li");
+                    let a = document.createElement("a");
+                    a.href = "/"+item.path;
+                    a.textContent = (item.type==="dir" ? "📂 " : "📄 ")+item.name;
+                    a.target = "_blank";
+                    li.appendChild(a);
+                    fileList.appendChild(li);}
+                });
+
+            } catch (error) {
+                document.getElementById("file-list").innerHTML = "❌ Impossible de charger les fichiers.";
+            }
+        }
+
+        fetchFiles();
+    </script>
+
+</body>
+</html>
