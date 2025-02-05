@@ -60,7 +60,6 @@
                     let a = document.createElement("a");
                     a.href = "/"+item.path;
                     a.textContent = (item.type==="dir" ? "📂 " : "📄 ")+item.name;
-                    a.target = "_blank";
                     li.appendChild(a);
                     fileList.appendChild(li);}
                 });
